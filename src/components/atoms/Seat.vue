@@ -1,5 +1,14 @@
+<!-- 
+   
+  1. Semantic Structure Comes First
+  Every interactive widegt must begin with the HTML element that matches its action 
+  
+  -->
+
 <template>
-  <div
+  <button
+    tabindex="0"
+    type="button"
     class="seat"
     :class="{
       selected: modelValue === seat.id,
@@ -8,7 +17,7 @@
     @click="select"
   >
     {{ seat.label }}
-  </div>
+  </button>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,13 @@
 <template>
-  <div class="seat-row">
+  <ul
+    id="seat-list"
+    class="seat-row"
+    role="listitem"
+    :aria-activedescendant="activeId"
+  >
+    <li></li>
     <Seat v-for="s in row" :key="s.id" :seat="s" v-model="selected" />
-  </div>
+  </ul>
 </template>
 
 <script setup lang="ts">
@@ -11,6 +17,7 @@ import { computed } from 'vue';
 const props = defineProps<{
   row: SeatData[];
   modelValue: string;
+  activeId: string;
 }>();
 
 const emit = defineEmits<{
